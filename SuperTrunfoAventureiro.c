@@ -117,6 +117,22 @@ int main(){
     printf("(1) População.\n(2) Área\n(3) PIB.\n(4) Número de pontos turísticos.\n(5) densidade populacional.\n(6) PIB per capita.\n");
     scanf("%d",&escolha_do_atributo);  
 
+    switch(escolha_do_atributo){
+        case 1:printf("Você escolheu o atributo População.\n");
+        break;
+        case 2:printf("Você escolheu o atributo Área\n");
+        break
+        case 3:printf("Você escolheu o atributo PIB.\n");
+        break
+        case 4:printf("Você escolheu o atributo Número de pontos turísticos.\n");
+        break
+        case 5:printf("Você escolheu o atributo Densidade Populacional.\n");
+        break
+        case 6:printf("Você escolheu o atributo PIB per capita.\n");
+        break
+        default:printf("Você escolheu o atributo PIB\n");
+    }
+    
     
 
 
