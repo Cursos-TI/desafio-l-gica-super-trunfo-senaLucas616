@@ -43,13 +43,13 @@
 //funçao que recebe os dados para criaçao das cartas do super trunfo.
 void entradaDeDados(char estado[],char codigo_da_carta[],char nome_da_cidade[],int *populacao,float *area,float *pib,int *numero_de_pontos_turisticos){
     printf("Digite o nome do estado.\n:");
-    scanf("%s",estado);
+    scanf(" %[^\n]", estado);
     
     printf("Digite o codigo da carta.\n:");
-    scanf("%s",codigo_da_carta);
+    scanf(" %[^\n]", codigo_da_carta);
     
     printf("Digite o nome da cidade.\n:");
-    scanf("%s",nome_da_cidade);
+    scanf(" %[^\n]", nome_da_cidade);
     
     printf("Digite a quantidade da populaçao.\n:");
     scanf("%d",populacao);
