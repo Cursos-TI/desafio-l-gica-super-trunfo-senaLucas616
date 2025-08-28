@@ -1,38 +1,20 @@
 #include <stdio.h>
 
 /*#Objetivos
-    Receber os dados de duas cartas: O programa deve receber os dados de duas cartas do Super Trunfo. Utilize o código desenvolvido no desafio anterior para o cadastro das cartas. As cartas devem conter os seguintes atributos:
-     
-        Estado (string)
-         
-        Código da carta (string)
-         
-        Nome da cidade (string)
-         
-        População (int)
-         
-        Área (float)
-         
-        PIB (float)
-         
-        Número de pontos turísticos (int)
-         
-    Calcular Densidade Populacional e PIB per capita: O programa deve calcular e exibir:
-     
-        Densidade Populacional: População / Área
-         
-        PIB per capita: PIB / População
-         
-    Comparar um atributo escolhido: Você deverá escolher apenas um dos atributos numéricos (População, Área, PIB, Densidade Populacional ou PIB per capita) para realizar a comparação entre as duas cartas. Essa escolha deve ser feita diretamente no código, não pela entrada do usuário.
-     
-    Determinar a carta vencedora:
-     
-        Para todos os atributos, exceto Densidade Populacional, a carta com o maior valor vence.
-         
-        Para Densidade Populacional, a carta com o menor valor vence.
-         
-    Exibir o resultado da comparação: O programa deve exibir, de forma clara, qual carta venceu a comparação, incluindo o atributo utilizado na comparação e os valores das duas cartas para aquele atributo. Exemplo:
+## 🏅 Nível Aventureiro
 
+No nível Aventureiro, você expandirá o sistema para incluir a comparação aninhada e a criação de um menu interativo usando `switch`.
+
+### 🆕 Diferença em relação ao Nível Novato:
+- **Menu Interativo:** O usuário poderá escolher diferentes atributos para comparação através de um menu.
+- **Comparação Aninhada:** Implementação de lógica de comparação mais complexa, utilizando estruturas aninhadas para tomar decisões baseadas em múltiplos atributos.
+
+### 🚩 Novas Funcionalidades:
+- **Cadastro de Cartas:** Similar ao nível Novato, com a adição de comparação de múltiplos atributos.
+- **Menu Interativo:** Uso de `switch` para criar um menu que permite ao jogador escolher os atributos a serem comparados.
+- **Exibição de Resultados:** O sistema exibirá o resultado da comparação, indicando qual carta venceu e qual atributo foi utilizado.
+
+---
 
 */
 
@@ -112,45 +94,122 @@ int main(){
     pib_per_capita2 = pib2 / populacao2;
     
     //selecionado qual atributo a ser comparado
-    printf("por favor selecione qual dos atributos os jogadores desejam comparar.\n");
+    printf("Seleçao para qual dos atributos\nos jogadores desejam comparar.\n");
+    printf("--------------------------------------\n");
+    
     printf("digite os respectivos numeros dos atribuídos aos atributos para selecionar\na característica desejada.\n");
-    printf("(1) População.\n(2) Área\n(3) PIB.\n(4) Número de pontos turísticos.\n(5) densidade populacional.\n(6) PIB per capita.\n");
+    printf("(1) População.\n(2) Área\n(3) PIB.\n(4) Número de pontos turísticos.\n(5) densidade populacional.\n(6) PIB per capita.\n:");
     scanf("%d",&escolha_do_atributo);  
-
+    
+    //menu interativo usando switch para escolher o atributo
     switch(escolha_do_atributo){
         case 1:printf("Você escolheu o atributo População.\n");
         break;
         case 2:printf("Você escolheu o atributo Área\n");
-        break
+        break;
         case 3:printf("Você escolheu o atributo PIB.\n");
-        break
+        break;
         case 4:printf("Você escolheu o atributo Número de pontos turísticos.\n");
-        break
+        break;
         case 5:printf("Você escolheu o atributo Densidade Populacional.\n");
-        break
+        break;
         case 6:printf("Você escolheu o atributo PIB per capita.\n");
-        break
+        break;
         default:printf("Você escolheu o atributo PIB\n");
     }
     
+   //Possiveis escolhas dos atributos selecionados para comparaçao
+   //atributo 1 - Populaçao - maior valor vence
+   if(escolha_do_atributo == 1){
+        if(populacao1 > populacao2){
+            printf("A carta 1 venceu a carta 2 usando o atributo populaçao.\n");
+            printf("Populaçao da carta 1: %d\n",populacao1);
+            printf("Populaçao da carta 2: %d\n",populacao2);
+
+        }else if(populacao1 < populacao2){
+            printf("A carta 2 venceu a carta 1 usando o atributo populaçao.\n");
+            printf("Populaçao da carta 1: %d\n",populacao1);
+            printf("Populaçao da carta 2: %d\n",populacao2);
+        
+        }
+    //atributo 2 - Area - maior valor vence
+    }else if(escolha_do_atributo == 2){
+        if(area1 > area2){
+            printf("A carta 1 venceu a carta 2 usando o atributo area.\n");
+            printf("Area da carta 1: %.2f\n",area1);
+            printf("Area da carta 2: %.2f\n",area2);
+
+        }else if(area1 < area2){
+            printf("A carta 2 venceu a carta 1 usando o atributo area.\n");
+            printf("Area da carta 1: %.2f\n",area1);
+            printf("Area da carta 2: %.2f\n",area2);
+        
+        }
+        //atributo 3 - Pib - maior valor vence
+    }else if(escolha_do_atributo == 3){
+        if(pib1 > pib2){
+            printf("A carta 1 venceu a carta 2 usando o atributo pib.\n");
+            printf("Pib da carta 1: %.2f\n",pib1);
+            printf("Pib da carta 2: %.2f\n",pib2);
+
+        }else if(pib1 < pib2){
+            printf("A carta 2 venceu a carta 1 usando o atributo pib.\n");
+            printf("Pib da carta 1: %.2f\n",pib1);
+            printf("Pib da carta 2: %.2f\n",pib2);
+        
+        }
+    //atributo 4 - Numero de pontos turisticos - maior valor vence
+    }else if(escolha_do_atributo == 4){
+        if(numero_de_pontos_turisticos1 > numero_de_pontos_turisticos2){
+            printf("A carta 1 venceu a carta 2 usando o atributo numero de pontos turisticos.\n");
+            printf("Numero de pontos turisticos da carta 1: %d\n",numero_de_pontos_turisticos1);
+            printf("Numero de pontos turisticos da carta 2: %d\n",numero_de_pontos_turisticos2);
+
+        }else if(numero_de_pontos_turisticos1 < numero_de_pontos_turisticos2){
+            printf("A carta 2 venceu a carta 1 usando o atributo numero de pontos turisticos.\n");
+            printf("Numero de pontos turisticos da carta 1: %d\n",numero_de_pontos_turisticos1);
+            printf("Numero de pontos turisticos da carta 2: %d\n",numero_de_pontos_turisticos2);
+        
+        }
+    //atributo 5 - Densidade populacional - menor valor vence
+    }else if(escolha_do_atributo == 5){
+        if(densidade_populacional1 < densidade_populacional2){
+            printf("A carta 1 venceu a carta 2 usando o atributo densidade populacional.\n");
+            printf("Densidade populacional da carta 1: %.2f\n",densidade_populacional1);
+            printf("Densidade populacional da carta 2: %.2f\n",densidade_populacional2);
+
+        }else if(densidade_populacional1 > densidade_populacional2){
+            printf("A carta 2 venceu a carta 1 usando o atributo densidade populacional.\n");
+            printf("Densidade populacional da carta 1: %.2f\n",densidade_populacional1);
+            printf("Densidade populacional da carta 2: %.2f\n",densidade_populacional2);
+        
+        }
+    //atributo 6 - Pib per capita - maior valor vence
+    }else if(escolha_do_atributo == 6){
+        if(pib_per_capita1 > pib_per_capita2){
+            printf("A carta 1 venceu a carta 2 usando o atributo pib per capita.\n");
+            printf("Pib per capita da carta 1: %.2f\n",pib_per_capita1);
+            printf("Pib per capita da carta 2: %.2f\n",pib_per_capita2);
+
+        }else if(pib_per_capita1 < pib_per_capita2){
+            printf("A carta 2 venceu a carta 1 usando o atributo pib per capita.\n");
+            printf("Pib per capita da carta 1: %.2f\n",pib_per_capita1);
+            printf("Pib per capita da carta 2: %.2f\n",pib_per_capita2);
+        
+        }
+    //caso o jogador digite um numero diferente dos atribuídos aos atributos retornado um  atributo default
+    }else{
+        if(pib1 > pib2){
+            printf("A carta 1 venceu a carta 2 usando o atributo pib.\n");
+            printf("Pib da carta 1: %.2f\n",pib1);
+            printf("Pib da carta 2: %.2f\n",pib2);
     
-
-
-
-  
-  //fazendo comparaçao entre as cartas usando o atributo populaçao
-    /*
-    if(populacao1 > populacao2){
-        printf("A carta 1 venceu a carta 2 usando o atributo populaçao.\n");
-        printf("Populaçao da carta 1: %d\n",populacao1);
-        printf("Populaçao da carta 2: %d\n",populacao2);
-
-    }else if(populacao1 < populacao2){
-        printf("A carta 2 venceu a carta 1 usando o atributo populaçao.\n");
-        printf("Populaçao da carta 1: %d\n",populacao1);
-        printf("Populaçao da carta 2: %d\n",populacao2);
-    
+        }else if(pib1 < pib2){
+            printf("A carta 2 venceu a carta 1 usando o atributo pib.\n");
+            printf("Pib da carta 1: %.2f\n",pib1);
+            printf("Pib da carta 2: %.2f\n",pib2);
+        }
     }
-    */
+    //Fim do programa  super trunfo nivel aventureiro.
     return 0;
 }
