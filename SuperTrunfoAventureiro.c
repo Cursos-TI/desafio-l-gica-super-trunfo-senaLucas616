@@ -44,7 +44,7 @@ void entradaDeDados(char estado[],char codigo_da_carta[],char nome_da_cidade[],i
 }
 int main(){
     ///Iniciando o programa
-    printf("Super Trunfo Novato\nbem vindo ao jogo.\n");
+    printf("Super Trunfo Aventureiro\nbem vindo ao jogo.\n");
     
     //declarando as variaveis para a carta 1
     char estado1[30];
