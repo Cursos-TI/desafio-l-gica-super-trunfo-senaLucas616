@@ -128,6 +128,6 @@ int main(){
         printf("Populaçao da carta 2: %d\n",populacao2);
     
     }
-    
+    //Fim do programa
     return 0;
 }
